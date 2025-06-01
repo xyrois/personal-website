@@ -32,7 +32,7 @@ const Links = () => (
           className="flex flex-col items-center bg-gray-300 dark:bg-gray-800 p-4 rounded-lg transition hover:scale-105"
         >
           {icon}
-          <span className="mt-2 text-sm text-black dark:text-white">{name}</span>
+          <span className="mt-2 text-sm text-black">{name}</span>
         </a>
       ))}
     </div>

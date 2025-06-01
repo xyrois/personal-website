@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Experience = () => (
-  <div className="space-y-6 text-sm text-black dark:text-white">
+  <div className="space-y-6 text-sm text-black">
     {/* Education */}
     <div>
       <h2 className="text-xl font-bold mb-2">Education</h2>
