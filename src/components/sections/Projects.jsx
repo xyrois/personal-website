@@ -9,7 +9,7 @@ const skills = [
 const tools = ['Tableau', 'Google Sheets', 'Photoshop'];
 
 const Projects = () => (
-  <div className="space-y-6 text-black dark:text-white text-sm">
+  <div className="space-y-6 text-black text-sm">
     {/* Skills & Tools */}
     <div className="flex flex-col md:flex-row gap-6">
       <div className="flex-1">
