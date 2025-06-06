@@ -117,8 +117,11 @@ const App = () => {
               win.type === 'links' ? 450 :
               win.type === 'projects' ? 650 : 500
             }
-            customWidth={win.type === 'projects' ? '1000px' : undefined}
-              >
+            customWidth={
+              win.type === 'projects' ? '1000px' :
+              win.type === 'experience' ? '600px' : undefined
+            }              
+            >
             {sectionComponents[win.type]}
           </Modal>
         ))}

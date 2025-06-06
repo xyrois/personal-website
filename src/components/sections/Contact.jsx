@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <div className="text-black dark:text-white">
       <h2 className="text-black text-2xl font-bold mb-4">Contact Me</h2>
-      <p className="text-black">The best way to reach me is at: <a href="mailto:you@example.com" className="text-blue-600">Brintak6@gmail.com</a></p>
+      <p className="text-black">The best way to reach me is my email: <a href="mailto:you@example.com" className="text-blue-600">Brintak6@Gmail.com</a></p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"

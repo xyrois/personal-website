@@ -3,10 +3,10 @@ import React from 'react';
 const skills = [
   'JavaScript', 'HTML', 'CSS', 'Python', 'C++',
   'React', 'Node.js', 'Next.js','REST APIs',
- 'Team Collaboration', 'Critical Thinking',
+  'Team Collaboration', 'Critical Thinking',
 ];
 
-const tools = ['Tableau', 'Google Sheets', 'Photoshop'];
+const tools = ['GitHub','Tableau', 'Google Sheets', 'Photoshop', 'Figma'];
 
 const Projects = () => (
   <div className="space-y-6 text-black text-sm">
@@ -18,7 +18,7 @@ const Projects = () => (
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="bg-gray-300 dark:bg-gray-800 px-3 py-1 rounded-full text-xs font-medium"
+              className="bg-gray-300 dark:bg-gray-800 px-3 py-1 rounded-full text-black dark:text-white text-xs font-medium"
             >
               {skill}
             </span>
@@ -31,7 +31,7 @@ const Projects = () => (
           {tools.map((tool, index) => (
             <span
               key={index}
-              className="bg-gray-300 dark:bg-gray-800 px-3 py-1 rounded-full text-xs font-medium"
+              className="bg-gray-300 dark:bg-gray-800 px-3 py-1 rounded-full text-black dark:text-white text-xs font-medium"
             >
               {tool}
             </span>
@@ -40,25 +40,74 @@ const Projects = () => (
       </div>
     </div>
 
-    {/* Project 1 */}
+      <p>
+        [ Click on the title of the projects to check them out! ]
+      </p>
+
+    {/* Project 3 */}
     <div>
       <h3 className="text-lg font-semibold">
-        PixMix <span className="text-xs text-gray-500">March 2025</span>
+        <a 
+          href="https://personal-website-pi-swart-62.vercel.app/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-black hover:underline"
+        >
+          Personal Portfolio Website
+        </a>{' '}
+        <span className="text-xs text-gray-500">June 2025</span>
       </h3>
       <p>
-        A web-based image manipulation tool built with React and the HTML5 Canvas API. Allows users to pixelate,
-        invert, and stylize images directly in-browser. Deployed to Vercel with GitHub-integrated CI/CD.
+        Inspired by <a href="https://www.sharyap.com/" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
+        sharyap.com</a> and her <a href="https://www.youtube.com/watch?v=_tWh4cYCTv0&t" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
+        video</a>  
+      </p>
+      <p>
+        A custom-built interactive portfolio showcasing my work, skills, and contact information. 
+        Features draggable modal windows, a dark/light theme toggle, and a dynamic contact form that 
+        sends messages via email and logs submissions to Google Sheets using Make (Integromat) webhooks. 
+        Built with React and Tailwind CSS for a clean, responsive, desktop-like experience.
       </p>
     </div>
 
     {/* Project 2 */}
     <div>
       <h3 className="text-lg font-semibold">
-        Quiz App <span className="text-xs text-gray-500">May 2025</span>
+        <a 
+          href="https://judykuang.github.io/Quiz-App/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-black hover:underline"
+        >
+          Quiz App
+        </a>{' '}
+        <span className="text-xs text-gray-500">May 2025</span>
       </h3>
       <p>
-        Developed in a team of four using HTML, CSS, and JavaScript. Led backend integration with the Open Trivia
-        Database API, enabling dynamic quiz settings like category, difficulty, and number of questions.
+        Collaboratively built a dynamic quiz application using HTML, CSS, and JavaScript in a team of four. 
+        Led backend integration with the Open Trivia Database API to enable user-customizable quizzes, 
+        including real-time selection of category, difficulty, and number of questions. Designed for an 
+        interactive and responsive user experience.
+      </p>
+    </div>
+
+    {/* Project 1 */}
+    <div>
+      <h3 className="text-lg font-semibold">
+        <a 
+          href="https://pix-mix.vercel.app/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-black hover:underline"
+        >
+          PixMix
+        </a>{' '}
+        <span className="text-xs text-gray-500">March 2025</span>
+      </h3>
+      <p>
+        Created an interactive web tool that transforms user uploaded images with real-time visual effects 
+        like pixelation, color inversion, and blur, all processed in the browser using the HTML5 Canvas API. 
+        Built with React and deployed to Vercel with automated CI/CD via GitHub.
       </p>
     </div>
   </div>
