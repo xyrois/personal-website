@@ -105,7 +105,7 @@ const App = () => {
 
             {/* Resume button using JS open */}
             <IconButton 
-              label="Resume"
+              label="CV"
               onClick={() => window.open('/Brinta_Kundu_CV.pdf', '_blank')}
             />
 
