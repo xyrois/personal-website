@@ -6,6 +6,7 @@ import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
 import Links from './components/sections/Links';
+import Resume from './components/sections/Resume';
 import ThemeToggle from './components/ThemeToggle';
 
 const sectionComponents = {
@@ -14,6 +15,7 @@ const sectionComponents = {
   projects: <Projects />,
   contact: <Contact />,
   links: <Links />,
+  resume: <Resume />,
 };
 
 const App = () => {
@@ -42,7 +44,7 @@ const App = () => {
     let x = rect.left - rect.width;
     let y = rect.top + window.scrollY + rect.height - 100;
 
-  // Clamp position so it stays in bounds
+    // Clamp position to viewport
     x = Math.max(20, Math.min(x, viewportWidth - modalWidth - 20));
     y = Math.max(20, Math.min(y, viewportHeight - modalHeight - 20));
 
@@ -58,7 +60,6 @@ const App = () => {
     setOpenWindows((prev) => [...prev, newWindow]);
     setZCounter((prev) => prev + 1);
   };
-
 
   const closeWindow = (id) => {
     setOpenWindows((prev) => prev.filter((w) => w.id !== id));
@@ -89,17 +90,38 @@ const App = () => {
           <p className="text-gray-700 mb-8 text-lg text-center">
             aspiring developer eager to learn, grow, and contribute through real-world projects
           </p>
+
+          {/* BUTTON GRID */}
           <div className="text-white grid grid-cols-4 gap-6">
+
+            {/* Row 1 */}
             <IconButton label="About" onClick={(e) => openWindow('about', e)} />
             <IconButton label="Experience" onClick={(e) => openWindow('experience', e)} />
-            <IconButton label="Projects" onClick={(e) => openWindow('projects', e)} />  
+            <IconButton label="Projects" onClick={(e) => openWindow('projects', e)} />
             <IconButton label="Contact" onClick={(e) => openWindow('contact', e)} />
 
+            {/* Row 2 */}
             <IconButton label="Links" onClick={(e) => openWindow('links', e)} />
+
+            {/* Resume button using JS open */}
+            <IconButton 
+              label="Resume"
+              onClick={() => window.open('/Brinta_Kundu_CV.pdf', '_blank')}
+            />
+
+            {/* Invisible placeholders to keep the grid 4×2 */}
+            <div className="invisible">
+              <IconButton label="" />
+            </div>
+            <div className="invisible">
+              <IconButton label="" />
+            </div>
+
           </div>
         </div>
       </div>
 
+      {/* Render Windows */}
       {[...openWindows]
         .sort((a, b) => a.z - b.z)
         .map((win) => (
@@ -120,11 +142,12 @@ const App = () => {
             customWidth={
               win.type === 'projects' ? '1000px' :
               win.type === 'experience' ? '600px' : undefined
-            }              
-            >
+            }
+          >
             {sectionComponents[win.type]}
           </Modal>
         ))}
+
       <footer className="absolute bottom-4 w-full text-center text-sm text-gray-600 dark:text-gray-400 z-0">
         © 2025 Brinta Kundu
       </footer>
