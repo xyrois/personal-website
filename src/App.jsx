@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import IconButton from './components/IconButton';
 import Modal from './components/Modal';
 import About from './components/sections/About';
@@ -21,8 +21,27 @@ const sectionComponents = {
 const App = () => {
   const [openWindows, setOpenWindows] = useState([]);
   const [zCounter, setZCounter] = useState(10);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileActiveSection, setMobileActiveSection] = useState(null);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const openWindow = (type, event) => {
+    if (isMobile) {
+      setMobileActiveSection(type);
+      return;
+    }
+
     const existing = openWindows.find((w) => w.type === type);
     if (existing) {
       bringToFront(existing.id);
@@ -74,6 +93,111 @@ const App = () => {
     setZCounter((prev) => prev + 1);
   };
 
+  const closeMobileSection = () => {
+    setMobileActiveSection(null);
+  };
+
+  // Mobile Layout
+  if (isMobile) {
+    return (
+      <div className="min-h-screen transition-all duration-500 bg-star-light text-white relative overflow-y-auto">
+        <ThemeToggle />
+
+        {/* Mobile Home View */}
+        {!mobileActiveSection && (
+          <div className="flex flex-col items-center py-10 px-6 min-h-screen">
+            <div className="w-full max-w-md bg-white text-black rounded-md shadow-lg border border-gray-600 mb-6">
+              <div className="bg-gray-300 dark:bg-gray-800 text-black dark:text-white px-4 py-2 rounded-t-md font-mono text-sm">
+                home
+              </div>
+
+              <div className="p-8 flex flex-col items-center">
+                <h1 className="text-4xl font-bold mb-3 text-center">
+                  Hi! <span className="text-orange-400">I'm Brinta</span>
+                </h1>
+                <p className="text-gray-700 mb-8 text-base text-center">
+                  aspiring developer eager to learn, grow, and contribute through real-world projects
+                </p>
+
+                {/* Vertical Button Stack */}
+                <div className="w-full flex flex-col gap-4">
+                  <button
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
+                    onClick={() => setMobileActiveSection('about')}
+                  >
+                    About
+                  </button>
+                  
+                  <button
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
+                    onClick={() => setMobileActiveSection('experience')}
+                  >
+                    Experience
+                  </button>
+                  
+                  <button
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
+                    onClick={() => setMobileActiveSection('projects')}
+                  >
+                    Projects
+                  </button>
+                  
+                  <button
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
+                    onClick={() => setMobileActiveSection('contact')}
+                  >
+                    Contact
+                  </button>
+                  
+                  <button
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
+                    onClick={() => setMobileActiveSection('links')}
+                  >
+                    Links
+                  </button>
+                  
+                  <button
+                    className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
+                    onClick={() => window.open('/Brinta_Kundu_CV.pdf', '_blank')}
+                  >
+                    CV
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <footer className="text-center text-sm text-gray-600 dark:text-gray-400 pb-6">
+              © 2025 Brinta Kundu
+            </footer>
+          </div>
+        )}
+
+        {/* Mobile Section View */}
+        {mobileActiveSection && (
+          <div className="fixed inset-0 bg-star-light overflow-y-auto z-50">
+            <div className="min-h-screen flex flex-col">
+              <div className="bg-white text-black m-4 rounded-md shadow-lg border border-gray-600 flex-1 flex flex-col">
+                <div className="bg-gray-300 dark:bg-gray-800 text-black dark:text-white font-mono flex justify-between items-center px-4 py-3 rounded-t-md sticky top-0 z-10">
+                  <span className="capitalize text-sm">{mobileActiveSection}</span>
+                  <button 
+                    onClick={closeMobileSection} 
+                    className="text-xl font-bold"
+                  >
+                    [ x ]
+                  </button>
+                </div>
+                <div className="p-6 overflow-auto flex-1">
+                  {sectionComponents[mobileActiveSection]}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Desktop Layout (unchanged)
   return (
     <div className="min-h-screen transition-all duration-500 bg-star-light text-white relative overflow-hidden flex items-center justify-center">
       <ThemeToggle />
@@ -93,7 +217,6 @@ const App = () => {
 
           {/* BUTTON GRID */}
           <div className="text-white grid grid-cols-4 gap-6">
-
             {/* Row 1 */}
             <IconButton label="About" onClick={(e) => openWindow('about', e)} />
             <IconButton label="Experience" onClick={(e) => openWindow('experience', e)} />
@@ -116,7 +239,6 @@ const App = () => {
             <div className="invisible">
               <IconButton label="" />
             </div>
-
           </div>
         </div>
       </div>
