@@ -2,7 +2,7 @@
 
 A modern, interactive personal portfolio website built with React, featuring a unique desktop window-style interface and a clean mobile-responsive design.
 
-🌐 **Live Demo**: [View Portfolio]([https://your-portfolio-url.vercel.app](https://brinta-kundu.vercel.app/))
+🌐 **Live Demo**: [brinta-kundu.vercel.app](https://brinta-kundu.vercel.app/)
 
 ## ✨ Features
 
