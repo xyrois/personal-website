@@ -51,7 +51,7 @@ const App = () => {
     const rect = event.currentTarget.getBoundingClientRect();
     const modalWidth = type === 'projects' ? 1000 : 500;
     const modalHeight =
-      type === 'about' ? 300 :
+      type === 'about' ? 450 :
       type === 'experience' ? 600 :
       type === 'contact' ? 500 :
       type === 'links' ? 450 :
@@ -255,7 +255,7 @@ const App = () => {
             onClose={() => closeWindow(win.id)}
             onClick={() => bringToFront(win.id)}
             maxHeight={
-              win.type === 'about' ? 300 :
+              win.type === 'about' ? 400 :
               win.type === 'work' ? 600 :
               win.type === 'contact' ? 500 :
               win.type === 'links' ? 450 :

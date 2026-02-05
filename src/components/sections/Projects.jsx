@@ -44,6 +44,28 @@ const Projects = () => (
         [ Click on the title of the projects to check them out! ]
       </p>
 
+    {/* Cybersecurity Projects */}
+    <div>
+      <h3 className="text-lg font-semibold">
+        <a 
+          href="https://github.com/xyrois/cyber-incident-reports" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-black hover:underline"
+        >
+          Cybersecurity Project Experience
+        </a>{' '}
+        <span className="text-xs text-gray-500">August 2025 – Present</span>
+      </h3>
+
+        <p>
+          Researched real-world cyber incidents and produced formal breach reports
+          analyzing root cause, attack vectors, and business impact.
+          Proposed mitigation strategies focused on detection, resilience, and
+          incident response best practices.
+        </p>
+    </div>
+
     {/* Project 3 */}
     <div>
       <h3 className="text-lg font-semibold">
@@ -109,7 +131,36 @@ const Projects = () => (
         like pixelation, color inversion, and blur, all processed in the browser using the HTML5 Canvas API. 
         Built with React and deployed to Vercel with automated CI/CD via GitHub.
       </p>
+      </div>
+
+      {/* Anime Analytics Dashboard */}
+    <div>
+      <h3 className="text-lg font-semibold">
+        <a 
+          href="https://public.tableau.com/app/profile/brinta.kundu/viz/InitialApplicationViz/Dashboard6" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-black hover:underline"
+        >
+          Anime Analytics Dashboard — Tableau
+        </a>{' '}
+        <span className="text-xs text-gray-500">Jan 2025</span>
+      </h3>
+      <p>
+        Designed a multi-sheet, interactive Tableau dashboard using MyAnimeList data
+        (~15,000 anime entries spanning 1917–2025).
+      </p>
+        <p>
+          Analyzed genre trends, release patterns, popularity shifts, and seasonal cycles
+          across decades.
+
+          Built dynamic filters, parameters, and calculated fields to support exploratory analysis.
+
+          Combined Python-based data cleaning with Tableau visualizations to surface
+          long-term trends in anime production and audience preferences.
+        </p>
     </div>
+
   </div>
 );
 
