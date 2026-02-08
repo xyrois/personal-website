@@ -48,7 +48,7 @@ const Projects = () => (
     <div>
       <h3 className="text-lg font-semibold">
         <a 
-          href="https://github.com/xyrois/cyber-incident-reports" 
+          href="https://cyber-incident-reports-site.vercel.app/incidents" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-black hover:underline"
