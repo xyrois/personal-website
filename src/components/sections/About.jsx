@@ -24,7 +24,7 @@ const About = () => {
     <h2 className="text-2xl font-bold mb-2">About Me</h2>
 
     <p>
-      Hi, I'm <strong>Brinta Kundu</strong>, a developer and student passionate about creativity and problem solving.
+      Hi, I'm <strong>Brinta Kundu</strong>, a developer passionate about creativity and problem solving.
     </p>
 
     <p>

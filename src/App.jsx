@@ -116,7 +116,7 @@ const App = () => {
                   Hi! <span className="text-orange-400">I'm Brinta</span>
                 </h1>
                 <p className="text-gray-700 mb-8 text-base text-center">
-                  aspiring developer eager to learn, grow, and contribute through real-world projects
+                  I'm passionate about creativity and problem solving, eager to grow, and contribute through real-world projects.
                 </p>
 
                 {/* Vertical Button Stack */}
@@ -212,7 +212,7 @@ const App = () => {
             Hi! <span className="text-orange-400">I'm Brinta</span>
           </h1>
           <p className="text-gray-700 mb-8 text-lg text-center">
-            aspiring developer eager to learn, grow, and contribute through real-world projects
+            I'm passionate about creativity and problem solving and contribute through real-world projects.
           </p>
 
           {/* BUTTON GRID */}

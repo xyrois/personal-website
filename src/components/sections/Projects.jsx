@@ -1,12 +1,13 @@
 import React from 'react';
 
 const skills = [
-  'JavaScript', 'HTML', 'CSS', 'Python', 'C++',
-  'React', 'Node.js', 'Next.js','REST APIs',
-  'Team Collaboration', 'Critical Thinking',
+  'JavaScript', 'HTML', 'CSS', 'Python', 'C++', 'R',
+  'React', 'Node.js', 'Next.js',
+  'PostgreSQL', 'SQLAlchemy', 'Machine Learning',
+  'REST APIs', 'Team Collaboration', 'Critical Thinking'
 ];
 
-const tools = ['GitHub','Tableau', 'Google Sheets', 'Photoshop', 'Figma'];
+const tools = ['GitHub','PostgreSQL','Firebase','Tableau','Google Sheets','Photoshop','Figma'];
 
 const Projects = () => (
   <div className="space-y-6 text-black text-sm">
@@ -43,6 +44,52 @@ const Projects = () => (
       <p>
         [ Click on the title of the projects to check them out! ]
       </p>
+
+  {/* IntelliDoc */}
+  <div>
+    <h3 className="text-lg font-semibold">
+      <a
+        href="https://github.com/TawhidulIslam0/IntelliDoc"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:underline"
+      >
+        IntelliDoc
+      </a>{' '}
+      <span className="text-xs text-gray-500">Jan 2026 – May 2026</span>
+    </h3>
+
+    <p>
+      Collaboratively developed an AI-powered file management platform that enables 
+      users to upload, organize, and intelligently search documents using semantic search. 
+      Led database architecture and management using PostgreSQL, SQLAlchemy, Alembic, and pgvector, 
+      while contributing to the machine learning pipeline through document chunking, 
+      embedding storage, and context-aware retrieval powered by vector embeddings. This enables users to 
+      efficiently manage and access their documents by searching based on meaning and context.
+    </p>
+  </div>
+
+  {/* Steam Game Analytics Database */}
+  <div>
+    <h3 className="text-lg font-semibold">
+      Steam Game Analytics Database
+      <span className="text-xs text-gray-500"> Spring 2026</span>
+    </h3>
+
+    <p>
+      Designed and implemented a normalized relational database for Steam game
+      analytics using MySQL and SQL. Modeled complex relationships between games,
+      developers, publishers, pricing history, reviews, and player activity data
+      across multiple datasets.
+    </p>
+
+    <p>
+      Developed data-cleaning and import pipelines in Python, created optimized
+      indexes and views for efficient querying, and applied database
+      normalization principles to support scalable analysis of game trends,
+      discounts, reviews, and player engagement metrics.
+    </p>
+  </div>
 
     {/* Cybersecurity Projects */}
     <div>

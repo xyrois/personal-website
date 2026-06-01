@@ -13,7 +13,7 @@ const Experience = () => (
           <span className="text-gray-500 text-xs">Fall 2023 – Spring 2026</span>
         </div>
         <p className="ml-1 text-gray-700">
-          B.S. in Computer Science · GPA: 3.7
+          B.S. in Computer Science · GPA: 3.8
         </p>
       </div>
 
@@ -45,6 +45,19 @@ const Experience = () => (
           </ul>
         </div>
 
+      <div>
+        <div className="flex justify-between">
+          <strong>Software Engineer Intern — Trance4mation Games</strong>
+          <span className="text-gray-500 text-xs">Jan 2026 – May 2026</span>
+        </div>
+
+        <ul className="list-disc list-inside ml-2 text-gray-800">
+          <li>Integrated Firebase Analytics to track user engagement and gameplay metrics.</li>
+          <li>Developed social feed features and Firebase-backed functionality.</li>
+          <li>Built responsive React/Next.js components from Figma designs.</li>
+        </ul>
+      </div>
+      
         <div>
           <strong>iOS Engineering Intern — Stretchmode (formerly Movement Vault)</strong>
           <ul className="list-disc list-inside ml-2 text-gray-800">
