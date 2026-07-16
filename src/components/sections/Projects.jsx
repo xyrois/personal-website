@@ -1,13 +1,25 @@
 import React from 'react';
 
 const skills = [
-  'JavaScript', 'HTML', 'CSS', 'Python', 'C++', 'R',
-  'React', 'Node.js', 'Next.js',
-  'PostgreSQL', 'SQLAlchemy', 'Machine Learning',
-  'REST APIs', 'Team Collaboration', 'Critical Thinking'
+  'JavaScript', 'TypeScript', 'HTML', 'CSS',
+  'Python', 'C++', 'R',
+  'React', 'Next.js', 'FastAPI',
+  'PyTorch', 'Machine Learning', 'Reinforcement Learning',
+  'PostgreSQL', 'SQLAlchemy',
+  'REST APIs'
 ];
 
-const tools = ['GitHub','PostgreSQL','Firebase','Tableau','Google Sheets','Photoshop','Figma'];
+const tools = [
+  'GitHub',
+  'PostgreSQL',
+  'Firebase',
+  'Tableau',
+  'Google Sheets',
+  'Docker',
+  'Git',
+  'Figma',
+  'Photoshop'
+];
 
 const Projects = () => (
   <div className="space-y-6 text-black text-sm">
@@ -44,6 +56,61 @@ const Projects = () => (
       <p>
         [ Click on the title of the projects to check them out! ]
       </p>
+
+  {/* Warehouse DQN Robot Navigation */}
+  <div>
+    <h3 className="text-lg font-semibold">
+      <a
+        href="https://github.com/xyrois/warehouse-dqn-robot"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:underline"
+      >
+        Warehouse DQN Robot Navigation
+      </a>{' '}
+      <span className="text-xs text-gray-500">July 2026</span>
+    </h3>
+
+    <p>
+      Built a Deep Q-Network (DQN) reinforcement learning agent from scratch in
+      PyTorch to autonomously navigate randomly generated warehouse environments.
+    </p>
+
+    <p>
+      Developed a custom grid-world environment with obstacle generation and
+      BFS-based validation to ensure every training map was solvable. Implemented
+      experience replay, target networks, and epsilon-greedy exploration while
+      tracking reward, loss, epsilon, and success rate across thousands of
+      training episodes.
+    </p>
+  </div>
+
+  {/* DNA Search Engine */}
+  <div>
+    <h3 className="text-lg font-semibold">
+      <a
+        href="https://github.com/xyrois/dna-search-engine"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:underline"
+      >
+        DNA Search Engine
+      </a>{' '}
+      <span className="text-xs text-gray-500">June 2026</span>
+    </h3>
+
+    <p>
+      Developed a full-stack web application for searching DNA sequences using
+      React, FastAPI, PostgreSQL, and SQLAlchemy.
+    </p>
+
+    <p>
+      Implemented FASTA file uploads, DNA sequence similarity search, global
+      sequence alignment, and GC-content analysis. Designed a PostgreSQL backend
+      to store biological datasets and support scalable sequence retrieval for
+      bioinformatics analysis.
+    </p>
+  </div>
 
   {/* IntelliDoc */}
   <div>

@@ -83,7 +83,7 @@ portfolio/
 │   ├── App.jsx                  # Main application component
 │   └── index.js                 # Application entry point
 ├── public/
-│   └── Brinta_Kundu_CV.pdf     # CV PDF
+│   └── Brinta Kundu Resume.pdf     # Resume PDF
 └── README.md
 ```
 

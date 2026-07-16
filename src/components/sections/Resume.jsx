@@ -1,7 +1,7 @@
 const Resume = () => {
   return (
     <iframe 
-      src="/Brinta_Kundu_CV.pdf"
+      src="/Resume full.pdf"
       title="Resume"
       className="w-full h-[80vh]"
     />

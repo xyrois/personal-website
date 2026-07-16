@@ -158,9 +158,9 @@ const App = () => {
                   
                   <button
                     className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 font-mono text-black dark:text-white p-4 rounded-2xl transition duration-200 text-lg w-full shadow-md border border-gray-600"
-                    onClick={() => window.open('/Brinta_Kundu_CV.pdf', '_blank')}
+                    onClick={() => window.open('/Resume full.pdf', '_blank')}
                   >
-                    CV
+                    Resume
                   </button>
                 </div>
               </div>
@@ -228,8 +228,8 @@ const App = () => {
 
             {/* Resume button using JS open */}
             <IconButton 
-              label="CV"
-              onClick={() => window.open('/Brinta_Kundu_CV.pdf', '_blank')}
+              label="Resume"
+              onClick={() => window.open('/Resume full.pdf', '_blank')}
             />
 
             {/* Invisible placeholders to keep the grid 4×2 */}
